@@ -1,0 +1,177 @@
+package kb.pl.client;
+
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationListener;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MainWindow extends JFrame implements ApplicationListener {
+	
+//	private JFrame frame;
+	private Label label;
+	private JTextField writeMessageField;
+	private JButton send;
+	private JTextArea receivedMessages;
+	private ButtonGroup technologies;
+	private JPanel radios;
+	private JPanel message;
+	private final ApplicationEventPublisher publisher;
+	private static String userName;
+	
+	@Autowired
+	private final CommunicationService communicationService;
+	
+	private static int counter;
+	
+    @Autowired
+	public MainWindow(ApplicationEventPublisher publisher, CommunicationService communicationService /*LoginPanel loginPanel, AppPanel appPanel*/) {
+//	    this.loginPanel = loginPanel;
+//	    this.appPanel = appPanel;
+	    initialize();
+	    counter++;
+	    this.publisher = publisher;
+	    this.communicationService = communicationService;
+	}
+
+	private void initialize() {
+		// TODO Auto-generated method stub
+		System.out.println("################Main Windows");
+		userName = JOptionPane.showInputDialog("Podaj imię");
+    	if (userName.equals("")) {
+    		userName = "anon";
+    	}
+//    	@Autowired
+//        private CommunicationService communicationService;
+
+//    	User user = new User(userName);
+//    	user.login(userName);
+    	//frame = new JFrame("Chat " + userName);
+    	/*frame.*/
+    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	
+    	label = new Label();
+    	label.setText("Napisz wiadomość");
+    	label.setSize(50, 30);
+    	
+    	/*frame.*/
+    	setSize(500, 400);
+    	setTitle("Chat " + userName);
+    	
+    	writeMessageField = new JTextField();
+    	writeMessageField.setPreferredSize(new Dimension(400 - label.getWidth(), 30));
+    	writeMessageField.setText("Napisz wiadomość...");
+    	writeMessageField.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("aaaa" + e);
+			}
+		});
+    	
+    	send = new JButton("Wyślij");
+    	send.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("Send button pressed");
+				SendMessageEvent sendMessageEvent = new SendMessageEvent(this, writeMessageField.getText());
+				publisher.publishEvent(sendMessageEvent);
+			}
+		});
+    	
+    	receivedMessages = new JTextArea();
+    	receivedMessages.setOpaque(true);
+    	receivedMessages.setBackground(Color.white);
+    	receivedMessages.setText("Witaj " + userName + "!");
+    	receivedMessages.setEditable(false);
+    	receivedMessages.setSize(350, 200);
+    	
+    	JRadioButton hessianRadioButton = new JRadioButton("Hessian");
+    	hessianRadioButton.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				receivedMessages.setText(receivedMessages.getText() +
+						"\nWybrana technologia: Hessian");
+			}
+		});
+    	JRadioButton burlapRadioButton = new JRadioButton("Burlap");
+    	burlapRadioButton.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				receivedMessages.setText(receivedMessages.getText() +
+						"\nWybrana technologia: Burlap");
+			}
+		});
+    	JRadioButton xmlRpcRadioButton = new JRadioButton("XML RPC");
+    	xmlRpcRadioButton.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				receivedMessages.setText(receivedMessages.getText() +
+						"\nWybrana technologia: XML RPC");
+			}
+		});
+    	hessianRadioButton.setSelected(true);
+    	receivedMessages.setText(receivedMessages.getText() +
+				"\nWybrana technologia: Hessian");
+    	
+    	technologies = new ButtonGroup();
+    	technologies.add(hessianRadioButton);
+    	technologies.add(burlapRadioButton);
+    	technologies.add(xmlRpcRadioButton);
+    	
+    	radios = new JPanel();
+    	radios.setLayout(new GridLayout(1, 3));
+    	radios.add(hessianRadioButton);
+    	radios.add(burlapRadioButton);
+    	radios.add(xmlRpcRadioButton);
+    	/*frame.*/
+    	add(radios, BorderLayout.NORTH);
+
+    	/*frame.*/
+    	add(receivedMessages, BorderLayout.CENTER);
+    	
+    	message = new JPanel(); 
+    	message.setLayout(new FlowLayout());
+//	    	message.add(label);
+    	message.add(writeMessageField);
+    	message.add(send);
+    	
+    	/*frame.*/
+    	add(message, BorderLayout.SOUTH);
+ 
+        System.out.println( "Hello World!" );
+	}
+
+	@Override
+	public void onApplicationEvent(ApplicationEvent event) {
+		System.out.println("@@@MainWindow " + event);
+//		communicationService.login(userName);
+	}
+
+}

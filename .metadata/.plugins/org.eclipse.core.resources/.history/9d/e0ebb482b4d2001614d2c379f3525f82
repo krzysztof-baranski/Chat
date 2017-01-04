@@ -1,0 +1,5 @@
+package kb.pl.server;
+
+public class UserService {
+
+}

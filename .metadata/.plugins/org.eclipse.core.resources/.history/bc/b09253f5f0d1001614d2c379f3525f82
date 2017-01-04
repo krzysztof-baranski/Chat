@@ -1,0 +1,20 @@
+package kb.pl.client;
+
+import javax.swing.JFrame;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class MainWindow extends JFrame {
+	@Autowired
+	public Window(/*LoginPanel loginPanel, AppPanel appPanel*/) {
+//	    this.loginPanel = loginPanel;
+//	    this.appPanel = appPanel;
+	    initialize();
+	}
+
+	private void initialize() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

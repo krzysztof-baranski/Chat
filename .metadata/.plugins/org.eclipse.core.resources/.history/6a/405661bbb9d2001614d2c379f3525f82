@@ -1,0 +1,24 @@
+package kb.pl.client;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationEvent;
+
+import kb.pl.protocol.Message;
+
+public class SendMessageEvent extends ApplicationEvent {
+
+//    private final List<Message> messages;
+    private final String message;
+
+    public SendMessageEvent(Object source, String string) {
+        super(source);
+//        this.messages = string;
+        this.message = string;
+    }
+
+    public List<Message> getMessages() {
+        return message;
+    }
+
+}

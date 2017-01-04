@@ -1,0 +1,25 @@
+package kb.pl.client;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationEvent;
+
+import kb.pl.protocol.Message;
+
+@SuppressWarnings("serial")
+public class MessageEvent extends ApplicationEvent {
+
+//    private final List<Message> messages;
+    private final String message;
+
+    public MessageEvent(Object source, String string) {
+        super(source);
+//        this.messages = string;
+        this.message = string;
+    }
+
+    public String getMessages() {
+        return message;
+    }
+
+}

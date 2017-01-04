@@ -1,0 +1,43 @@
+package kb.pl.client;
+
+import java.net.MalformedURLException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import kb.pl.protocol.IChatService;
+import kb.pl.protocol.Message;
+
+@Component
+public class CommunicationService {
+	 private final BurlapClient burlapClient;
+	 private final HessianClient hessianClient;
+//	    private final XmlRpc xmlRpc;
+	    
+	@Autowired
+	public CommunicationService(BurlapClient burlapClient, HessianClient hessianClient) throws MalformedURLException {
+		this.burlapClient = burlapClient;
+		this.hessianClient = hessianClient;
+		//        this.xmlRpc = xmlRpc;
+		getHessianService();
+		getBurlapService();
+		//        xmlRpc();
+	}
+	
+	private void getBurlapService() {
+		// TODO Auto-generated method stub
+		IChatService burlapService = burlapClient.getService();
+		System.out.println("@@@@@ getBurlapService " + burlapService);
+	}
+
+	private void getHessianService() {
+		// TODO Auto-generated method stub
+		IChatService hessianService = hessianClient.getService();
+	}
+
+	public void sendMessage(String messageText) {
+        Message message = new Message(messageText);
+//        CHAT_SERVICES.get(getSelectedTechnology()).sendMessage(channelData.getId(), getLoggedUser().getId(), message);
+//        LOGGER.info("Message send on channel <{}>", channelData.getName());
+    }
+}

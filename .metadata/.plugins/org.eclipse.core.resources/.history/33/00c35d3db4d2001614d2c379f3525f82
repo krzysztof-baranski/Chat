@@ -1,0 +1,23 @@
+package kb.pl.client;
+
+public class User {
+	
+	private static int userId;
+	private static String userName;
+	
+	public User (int userId, String userName) {
+		this.userId = userId;
+		this.userName = userName;
+	}
+//
+//	public static void login(int id, String username) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+
+	public void login() {
+		// TODO Auto-generated method stub
+		System.out.println(this.userId);
+	}	
+	
+}

@@ -1,0 +1,10 @@
+package kb.pl.server;
+
+import org.springframework.stereotype.Service;
+
+import kb.pl.protocol.IChatService;
+
+@Service
+public class ChatService implements IChatService {
+
+}

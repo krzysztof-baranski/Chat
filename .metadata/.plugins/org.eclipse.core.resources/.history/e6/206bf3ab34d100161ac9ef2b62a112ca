@@ -1,0 +1,5 @@
+package kb.pl.protocol;
+
+public class Message {
+
+}

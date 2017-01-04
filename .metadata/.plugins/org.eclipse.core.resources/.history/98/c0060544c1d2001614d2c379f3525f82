@@ -1,0 +1,27 @@
+package kb.pl.server;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import kb.pl.protocol.Message;
+
+public class User {
+	private final String username;
+	private final List<Message> messages = new ArrayList<>();
+	
+	public User (String username) {
+		this.username = username;
+	}
+	
+	public String getUsername () {
+		return this.username;
+	}
+
+	public void newMessage(String username2, Message message) {
+		// TODO Auto-generated method stub
+//		List<Message> messages = new ArrayList<>();
+        messages.add(message);
+	}
+	
+	
+}

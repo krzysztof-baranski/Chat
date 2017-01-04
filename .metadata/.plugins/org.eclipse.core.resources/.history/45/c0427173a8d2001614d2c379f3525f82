@@ -1,0 +1,14 @@
+package kb.pl.client;
+
+public class Technology {
+	
+	private Technology selectedTechnology;
+
+	public Technology () {
+		
+	}
+	
+	public void setTechnology (Technology technology) {
+		this.selectedTechnology = technology;
+	}
+}
