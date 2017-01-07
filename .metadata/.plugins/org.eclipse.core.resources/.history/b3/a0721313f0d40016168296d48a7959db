@@ -1,0 +1,9 @@
+package kb.pl.protocol;
+
+public class MessageStorage {
+
+	public MessageStorage() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

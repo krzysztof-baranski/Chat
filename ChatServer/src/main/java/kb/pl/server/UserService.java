@@ -6,28 +6,39 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import kb.pl.protocol.Message;
+import kb.pl.server.IUserService;;
 
 @Service
 public class UserService implements IUserService {
-	ArrayList<User> users = new ArrayList<>();
+	public ArrayList<User> users = new ArrayList<>();
+	public final ArrayList<Message> messages = new ArrayList<>();
+	
 	public void login(String userName) {
+		System.out.println("@@ UserService login " + userName );
 		User user = new User(userName);
 		users.add(user);
 	}
 	
-	public void newMessage (String username, Message message) {
+	public void newMessage (String username, String message) {
+		System.out.println("@@@ UserService newMessage " + username + " "+ message);
+		messages.add(new Message(username, message));
 		for (int i = 0; i< users.size(); i++) {
-			users.get(i).newMessage(username, message);
+//			users.get(i).newMessage(username, message);
 		}
 	}
 	
-	public List readMessage () {
-		List messages = new ArrayList<>();
-		for (int i = 0; i< users.size(); i++) {
-			messages.add(users.get(i).readMessages());
-		}
-		System.out.println("UserService readMessages " + messages);
-		return messages;
+//	public List<Message> readMessage () {
+//		List<Message> messages = new ArrayList<>();
+//		for (int i = 0; i< users.size(); i++) {
+//			messages.add(users.get(i).readMessages());
+//		}
+//		System.out.println("UserService readMessages " + messages);
+//		return messages;
+//	}
+
+	public List<User> getUsers() {
+		// TODO Auto-generated method stub
+		return users;
 	}
 	
 }

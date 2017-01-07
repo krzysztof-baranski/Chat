@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kb.pl.protocol.Message;
+import kb.pl.protocol.MessageStorage;
 
 public class User {
 	private final String username;
@@ -18,10 +19,12 @@ public class User {
 		return this.username;
 	}
 
-	public void newMessage(String username2, Message message) {
+	public void newMessage(Message message) {
 		// TODO Auto-generated method stub
 //		List<Message> messages = new ArrayList<>();
+		System.out.println("Server User newMessage " + message.getSender() + " " + message.getMessage());
         messages.add(message);
+        MessageStorage.addMessage(message);
 	}
 
 	public List readMessages() {

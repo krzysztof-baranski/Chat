@@ -1,0 +1,52 @@
+package kb.pl.server;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
+
+import kb.pl.protocol.IChatService;
+import kb.pl.protocol.Message;
+import kb.pl.protocol.MessageStorage;
+
+@Service
+public class ChatService implements IChatService {
+	private IUserService userService;
+	private List<User> users = new ArrayList<>();
+	
+	@Autowired
+    public ChatService(/*IChannelService channelService,*/ IUserService userService) {
+//        this.channelService = channelService;
+        this.userService = userService;
+    }
+
+	@Override
+	public void sendMessage(String sender, String message) {
+		// TODO Auto-generated method stub
+		System.out.println("@@@@@ ChatService sendMessage " + message);
+		
+		users = UserService.getUsers();
+	
+		System.out.println("@@@ ChatService users " + users);
+		Message mess = new Message(sender, message);
+		
+		MessageStorage.addMessage(mess);
+		for (User user: users) {
+			user.newMessage(mess);
+		}
+	}
+	
+	 @Scheduled(fixedRate = 1000)
+	 public List<Message> readMessages() {
+		 System.out.println("@@@ ChatService readMessages ");
+		 return MessageStorage.getMessages();
+	 }
+
+	@Override
+	public void login(String username) {
+		// TODO Auto-generated method stub
+		userService.login(username);
+	}
+}

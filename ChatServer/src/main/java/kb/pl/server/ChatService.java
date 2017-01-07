@@ -1,13 +1,20 @@
 package kb.pl.server;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import kb.pl.protocol.IChatService;
+import kb.pl.protocol.Message;
+import kb.pl.protocol.MessageStorage;
 
 @Service
 public class ChatService implements IChatService {
-	private final IUserService userService;
+	private IUserService userService;
+	private List<User> users = new ArrayList<>();
 	
 	@Autowired
     public ChatService(/*IChannelService channelService,*/ IUserService userService) {
@@ -16,10 +23,29 @@ public class ChatService implements IChatService {
     }
 
 	@Override
-	public void sendMessage(String message) {
+	public void sendMessage(String sender, String message) {
 		// TODO Auto-generated method stub
-		System.out.println("@@@@@ChatService sendMessage " + message);
+		System.out.println("@@@@@ ChatService sendMessage " + message);
+		
+		users = this.userService.getUsers();
+	
+		System.out.println("@@@ ChatService users " + users);
+		Message mess = new Message(sender, message);
+		
+		MessageStorage.addMessage(mess);
+		for (User user: users) {
+			user.newMessage(mess);
+		}
 	}
+	
+	 public List<Message> readMessages() {
+		 System.out.println("@@@ ChatService readMessages ");
+		 if (MessageStorage.getMessages().size() > 0) {
+			 System.out.println(MessageStorage.getMessages().size() +" " + MessageStorage.getMessages().get(0).getMessage());
+		 }
+	 
+	 return MessageStorage.getMessages();
+ }
 
 	@Override
 	public void login(String username) {

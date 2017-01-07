@@ -27,9 +27,9 @@ public class User {
 		return this.userName;
 	}
 
-	public void login(String un) {
-		// TODO Auto-generated method stub
-		communicationService.login(un);
-	}
+//	public void login(String un) {
+//		// TODO Auto-generated method stub
+//		communicationService.login(un);
+//	}
 	
 }

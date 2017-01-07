@@ -10,6 +10,8 @@ import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -24,7 +26,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationListener;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
+import kb.pl.protocol.Message;
 
 @Component
 public class MainWindow extends JFrame implements ApplicationListener {
@@ -53,6 +58,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
 	    counter++;
 	    this.publisher = publisher;
 	    this.communicationService = communicationService;
+	    communicationService.login(userName);
 	}
 
 	private void initialize() {
@@ -98,7 +104,8 @@ public class MainWindow extends JFrame implements ApplicationListener {
 				System.out.println("Send button pressed");
 //				MessageEvent MessageEvent = new MessageEvent(this, writeMessageField.getText());
 //				publisher.publishEvent(MessageEvent);
-				communicationService.sendMessage(writeMessageField.getText());
+				communicationService.sendMessage(userName, writeMessageField.getText());
+				communicationService.readMessages();
 			}
 		});
     	
@@ -170,17 +177,30 @@ public class MainWindow extends JFrame implements ApplicationListener {
 
 	@Override
 	public void onApplicationEvent(ApplicationEvent event) {
-		System.out.println("@@@MainWindow " + event);
-		communicationService.login(userName);
+//		System.out.println("@@@MainWindow " + event);
+//		communicationService.login(userName);
 		
 		if (event.getClass().equals(MessageEvent.class)) {
+			System.out.println("### MainWindow " + event.getClass() + " " + event.getSource());
 			onMessageReceived(event);	
 		}
+		
+//		if (event.getClass().equals(Mess))
 	}
 
 	private void onMessageReceived(ApplicationEvent event) {
 		// TODO Auto-generated method stub
-		receivedMessages.setText(receivedMessages.getText() + "dupa\n");
+		System.out.println("@@@ MainWindow onMEssageReceived " + event);
+		List<Message> list = new ArrayList<>();
+		list = ((MessageEvent) event).getMessages();
+		System.out.println(list);
+		for (Message message : list) {
+			if (message.getSender() != userName) {
+			receivedMessages.setText(receivedMessages.getText() + message.getSender() + 
+					": " + message.getMessage() + "\n");
+			}
+		}
+//		receivedMessages.setText(receivedMessages.getText());
 	}
 
 }

@@ -1,0 +1,11 @@
+package kb.pl.protocol;
+
+public interface IChatService {
+
+	void sendMessage(String username, String message);
+
+	void login(String string);
+
+	void readMessages();
+
+}

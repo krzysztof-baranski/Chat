@@ -1,12 +1,17 @@
 package kb.pl.client;
 
 import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import kb.pl.protocol.IChatService;
 import kb.pl.protocol.Message;
+import kb.pl.protocol.MessageStorage;
 
 @Component
 public class CommunicationService {
@@ -14,9 +19,13 @@ public class CommunicationService {
 	 private final HessianClient hessianClient;
 //	    private final XmlRpc xmlRpc;
 	 IChatService burlapService;
+	 private final ApplicationEventPublisher publisher;
+	 List<Message> messageList = new ArrayList<>();
 	    
 	@Autowired
-	public CommunicationService(BurlapClient burlapClient, HessianClient hessianClient) throws MalformedURLException {
+	public CommunicationService(BurlapClient burlapClient, HessianClient hessianClient, ApplicationEventPublisher publisher) throws MalformedURLException {
+		this.publisher = publisher;
+		
 		this.burlapClient = burlapClient;
 		this.hessianClient = hessianClient;
 		//        this.xmlRpc = xmlRpc;
@@ -37,14 +46,31 @@ public class CommunicationService {
 		IChatService hessianService = hessianClient.getService();
 	}
 
-	public void sendMessage(String messageText) {
+	public void sendMessage(String username, String messageText) {
 		System.out.println("@@@@CommunicationService sendMessage " + messageText);
-		messageText = "messageText :)";
-        Message message = new Message(messageText);
-        burlapService.sendMessage("HELLLOOOO.......... " + message);
+		messageText += "messageText :)";
+//        Message message = new Message(username, messageText);
+        burlapService.sendMessage(username, messageText + " HELLLOOOO.......... ");
 //        CHAT_SERVICES.get(getSelectedTechnology()).sendMessage(channelData.getId(), getLoggedUser().getId(), message);
 //        LOGGER.info("Message send on channel <{}>", channelData.getName());
     }
+	
+	@Scheduled(fixedRate = 1000)
+	public List<Message> readMessages() {
+		 System.out.println("@@@ CommunicationService readMessage ");
+
+		 messageList = burlapService.readMessages();
+		 System.out.println("@@@ CommunicationService readMessage " + messageList.size() + "!");
+		 MessageEvent MessageEvent = new MessageEvent(this, messageList);
+			publisher.publishEvent(MessageEvent);
+		 return messageList;
+	}
+	
+	@Scheduled(fixedRate = 1000 * 60)
+	public void clearList () {
+		System.out.println("@@ CommunicationService clear message list");
+		MessageStorage.clearList();
+	}
 	
 	public void login (String username) {
 		System.out.println("@@@@@@@@ login " + username );

@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="kb.pl.protocol.MessagesStorage"/>
+<fullyQualifiedTypeName name="kb.pl.server.User"/>
+<fullyQualifiedTypeName name="kb.pl.server.UserService"/>
+<fullyQualifiedTypeName name="kb.pl.server.IUserService"/>
+<fullyQualifiedTypeName name="org.springframework.scheduling.annotation.Scheduled"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="org.springframework.security.config.authentication.UserServiceBeanDefinitionParser"/>
+<fullyQualifiedTypeName name="javax.swing.text.DefaultCaret"/>
+<fullyQualifiedTypeName name="javax.swing.ScrollPaneConstants"/>
+<fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="kb.pl.client.MessageEvent"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="kb.pl.protocol.Message"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="kb.pl.protocol.MessageStorage"/>
 </qualifiedTypeNameHistroy>
