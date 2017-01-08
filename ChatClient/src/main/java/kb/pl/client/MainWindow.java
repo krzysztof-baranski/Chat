@@ -1,8 +1,6 @@
 package kb.pl.client;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -10,6 +8,9 @@ import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,11 +27,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationListener;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import kb.pl.protocol.Message;
-import kb.pl.protocol.MessageStorage;
 
 @Component
 public class MainWindow extends JFrame implements ApplicationListener {
@@ -49,7 +48,6 @@ public class MainWindow extends JFrame implements ApplicationListener {
 	@Autowired
 	private final CommunicationService communicationService;
 	
-	private static int counter;
 	private static int userId;
 	long timestamp;
 	
@@ -58,7 +56,6 @@ public class MainWindow extends JFrame implements ApplicationListener {
 //	    this.loginPanel = loginPanel;
 //	    this.appPanel = appPanel;
 	    initialize();
-	    counter++;
 	    this.publisher = publisher;
 	    this.communicationService = communicationService;
 	    userId = communicationService.login(userName);
@@ -66,7 +63,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
 
 	private void initialize() {
 		// TODO Auto-generated method stub
-		System.out.println("################Main Windows");
+		System.out.println("@@@ Main Windows initialize ");
 		userName = JOptionPane.showInputDialog("Podaj imię");
     	if (userName.equals("")) {
     		userName = "anon";
@@ -77,8 +74,16 @@ public class MainWindow extends JFrame implements ApplicationListener {
     	
     	//frame = new JFrame("Chat " + userName);
     	/*frame.*/
-    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	
+    	setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+    	WindowListener exitListener = new WindowAdapter() {
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                communicationService.logout(userId);
+                System.exit(0);
+            }
+        };
+        addWindowListener(exitListener);
     	label = new Label();
     	label.setText("Napisz wiadomość");
     	label.setSize(50, 30);
@@ -126,6 +131,8 @@ public class MainWindow extends JFrame implements ApplicationListener {
 				// TODO Auto-generated method stub
 				receivedMessages.setText(receivedMessages.getText() +
 						"\nWybrana technologia: Hessian");
+				
+				communicationService.setTechnology("hessian");
 			}
 		});
     	JRadioButton burlapRadioButton = new JRadioButton("Burlap");
@@ -136,6 +143,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
 				receivedMessages.setText(receivedMessages.getText() +
 						"\nWybrana technologia: Burlap");
 				
+				communicationService.setTechnology("burlap");
 			}
 		});
     	JRadioButton xmlRpcRadioButton = new JRadioButton("XML RPC");
@@ -145,8 +153,8 @@ public class MainWindow extends JFrame implements ApplicationListener {
 				// TODO Auto-generated method stub
 				receivedMessages.setText(receivedMessages.getText() +
 						"\nWybrana technologia: XML RPC");
-				// ############ usunąć
-				MessageStorage.clearList();
+
+				communicationService.setTechnology("xmlrpc");
 			}
 		});
     	hessianRadioButton.setSelected(true);

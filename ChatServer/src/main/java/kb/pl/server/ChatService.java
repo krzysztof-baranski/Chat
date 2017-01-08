@@ -17,8 +17,7 @@ public class ChatService implements IChatService {
 	private List<User> users = new ArrayList<>();
 	
 	@Autowired
-    public ChatService(/*IChannelService channelService,*/ IUserService userService) {
-//        this.channelService = channelService;
+    public ChatService(IUserService userService) {
         this.userService = userService;
     }
 
@@ -33,9 +32,9 @@ public class ChatService implements IChatService {
 		Message mess = new Message(senderId, senderName, message, timestamp);
 		
 		MessageStorage.addMessage(mess);
-		for (User user: users) {
-			user.newMessage(mess);
-		}
+//		for (User user: users) {
+//			user.newMessage(mess);
+//		}
 	}
 	
 	 public List<Message> readMessages() {
@@ -51,5 +50,11 @@ public class ChatService implements IChatService {
 	public int login(String username) {
 		// TODO Auto-generated method stub
 		return userService.login(username);
+	}
+
+	@Override
+	public int logout(int userId) {
+		// TODO Auto-generated method stub
+		return userService.logout(userId);
 	}
 }

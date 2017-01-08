@@ -1,0 +1,17 @@
+package kb.pl.protocol;
+
+import java.util.List;
+
+import kb.pl.server.User;
+
+public interface IChatService {
+
+	void sendMessage(int userId, String username, String message, long timestamp);
+
+	int login(String username);
+
+	User logout(int userId);
+	
+	List<Message> readMessages();
+
+}

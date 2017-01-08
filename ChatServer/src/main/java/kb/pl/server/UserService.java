@@ -12,23 +12,23 @@ import kb.pl.server.IUserService;;
 public class UserService implements IUserService {
 	public ArrayList<User> users = new ArrayList<>();
 	public final ArrayList<Message> messages = new ArrayList<>();
-	private static int lastUserId = -1; 
+	private int lastUserId = -1; 
 	
 	public int login(String userName) {
 		System.out.println("@@ UserService login " + userName );
-//		lastUserId++;
-		User user = new User(lastUserId + 1, userName);
+		lastUserId++;
+		User user = new User(lastUserId, userName);
 		users.add(user);
-		return lastUserId + 1;
+		return lastUserId;
 	}
 	
-	public void newMessage (int userId, String username, String message, long timestamp) {
-		System.out.println("@@@ UserService newMessage " + username + " "+ message);
+//	public void newMessage (int userId, String username, String message, long timestamp) {
+//		System.out.println("@@@ UserService newMessage " + username + " "+ message);
 //		messages.add(new Message(userId, username, message, timestamp));
-		for (int i = 0; i< users.size(); i++) {
+//		for (int i = 0; i< users.size(); i++) {
 //			users.get(i).newMessage(username, message);
-		}
-	}
+//		}
+//	}
 	
 //	public List<Message> readMessage () {
 //		List<Message> messages = new ArrayList<>();
@@ -42,6 +42,28 @@ public class UserService implements IUserService {
 	public List<User> getUsers() {
 		// TODO Auto-generated method stub
 		return users;
+	}
+
+	@Override
+	public int logout(int userId) {
+		// TODO Auto-generated method stub
+		int index = findIndex(userId);
+		if (index > -1) {
+			return users.indexOf(users.remove(index));
+		}
+		return -1;
+	}
+
+	private int findIndex(int userId) {
+		// TODO Auto-generated method stub
+		User user;
+		for (int i=0;i<users.size();i++) {
+			user = users.get(i);
+			if (user.getUserId() == userId) {
+				return i;
+			}
+		}
+		return -1;
 	}
 	
 }

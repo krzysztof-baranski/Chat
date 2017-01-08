@@ -5853,3 +5853,274 @@ org.eclipse.core.runtime.CoreException: Variable references non-existent resourc
 2017-01-08 15:35:58,156 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2017-01-08 15:35:58,159 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-01-08 15:35:58,161 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 15:51:07,932 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:51:07,933 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 15:51:07,934 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 15:51:07,957 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:51:07,957 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 15:51:47,771 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:51:47,771 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 15:51:47,773 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 15:51:47,775 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:51:47,775 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 15:52:20,989 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:52:20,989 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 15:52:20,990 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 15:52:20,993 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:52:20,994 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 15:53:04,503 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:53:04,503 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 15:53:04,505 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 15:53:04,507 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:53:04,507 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 15:53:16,959 [Worker-114] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol
+2017-01-08 15:53:16,959 [Worker-114] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-01-08 15:53:22,155 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:53:22,156 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\main\resources
+2017-01-08 15:53:22,158 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:53:22,158 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\test\resources
+2017-01-08 15:53:29,285 [Worker-113] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 15:53:29,285 [Worker-113] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B install
+2017-01-08 15:53:41,223 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:53:41,224 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 15:53:41,226 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 15:53:41,229 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:53:41,231 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 15:53:43,500 [Worker-110] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 15:53:43,500 [Worker-110] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B spring-boot:run
+2017-01-08 15:56:58,389 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:56:58,390 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 15:56:58,391 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 15:56:58,394 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:56:58,394 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 15:57:14,949 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:57:14,950 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 15:57:14,951 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 15:57:14,953 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:57:14,954 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 15:58:08,314 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:58:08,315 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 15:58:08,316 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 15:58:08,318 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:58:08,318 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 15:58:55,570 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:58:55,571 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 15:58:55,572 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 15:58:55,575 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 15:58:55,575 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 16:04:25,363 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:04:25,364 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:04:25,365 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:04:25,366 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:04:25,367 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:06:11,927 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:06:11,928 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:06:11,929 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:06:11,933 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:06:11,933 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:07:14,977 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:07:14,978 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:07:14,979 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:07:14,981 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:07:14,982 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 16:07:32,056 [Worker-123] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol
+2017-01-08 16:07:32,056 [Worker-123] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-01-08 16:07:36,886 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:07:36,887 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\main\resources
+2017-01-08 16:07:36,889 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:07:36,889 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\test\resources
+2017-01-08 16:07:46,157 [Worker-118] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:07:46,157 [Worker-118] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B install
+2017-01-08 16:07:58,044 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:07:58,045 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:07:58,046 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:07:58,049 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:07:58,049 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:08:00,589 [Worker-119] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:08:00,589 [Worker-119] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B spring-boot:run
+2017-01-08 16:08:31,911 [Worker-119] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:08:31,911 [Worker-119] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B spring-boot:run
+2017-01-08 16:09:21,643 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:09:21,644 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:09:21,645 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:09:21,647 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:09:21,647 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 16:09:40,198 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:09:40,199 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:09:40,199 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:09:40,201 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:09:40,201 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 16:11:50,686 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:11:50,687 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:11:50,688 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:11:50,690 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:11:50,691 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 16:14:03,065 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:14:03,066 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:14:03,067 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:14:03,070 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:14:03,070 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:14:50,803 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:14:50,803 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:14:50,804 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:14:50,806 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:14:50,806 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:15:12,624 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:15:12,624 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:15:12,625 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:15:12,627 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:15:12,627 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:16:25,513 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:16:25,514 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:16:25,515 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:16:25,517 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:16:25,517 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:16:35,862 [Worker-111] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol
+2017-01-08 16:16:35,863 [Worker-111] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-01-08 16:16:40,663 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:16:40,664 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\main\resources
+2017-01-08 16:16:40,666 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:16:40,666 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\test\resources
+2017-01-08 16:16:47,788 [Worker-127] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:16:47,788 [Worker-127] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B install
+2017-01-08 16:16:59,711 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:16:59,712 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:16:59,715 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:16:59,721 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:16:59,722 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:17:02,460 [Worker-126] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:17:02,461 [Worker-126] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B spring-boot:run
+2017-01-08 16:18:59,009 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:18:59,010 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:18:59,011 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:18:59,019 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:18:59,020 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:19:51,703 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:19:51,704 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:19:51,705 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:19:51,706 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:19:51,706 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:20:00,536 [Worker-119] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:20:00,536 [Worker-119] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B install
+2017-01-08 16:20:12,629 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:20:12,629 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:20:12,630 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:20:12,632 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:20:12,632 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:20:15,372 [Worker-111] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:20:15,372 [Worker-111] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B spring-boot:run
+2017-01-08 16:21:21,731 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:21:21,731 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:21:21,732 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:21:21,734 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:21:21,734 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:21:30,067 [Worker-111] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:21:30,067 [Worker-111] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B install
+2017-01-08 16:21:42,121 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:21:42,122 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:21:42,123 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:21:42,126 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:21:42,126 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:21:46,448 [Worker-129] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:21:46,448 [Worker-129] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B spring-boot:run
+2017-01-08 16:22:25,704 [Worker-119] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:22:25,704 [Worker-119] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B spring-boot:run
+2017-01-08 16:24:29,576 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:24:29,576 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\main\resources
+2017-01-08 16:24:29,578 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:24:29,578 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\test\resources
+2017-01-08 16:24:29,612 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:24:29,613 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:24:29,615 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:24:29,617 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:24:29,618 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:25:08,462 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:25:08,463 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:25:08,464 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:25:08,466 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:25:08,466 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:25:21,701 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:25:21,702 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:25:21,702 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:25:21,704 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:25:21,704 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:31:00,331 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:00,332 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:31:00,333 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:31:00,335 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:00,335 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:31:17,329 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:17,330 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:31:17,331 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:31:17,333 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:17,334 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:31:37,015 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:37,015 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:31:37,016 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:31:37,019 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:37,019 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:31:53,200 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:53,200 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\main\resources
+2017-01-08 16:31:53,201 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:53,202 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\test\resources
+2017-01-08 16:31:53,246 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:53,247 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:31:53,248 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:31:53,250 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:31:53,250 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:32:13,865 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:32:13,866 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\main\resources
+2017-01-08 16:32:13,868 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:32:13,868 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\test\resources
+2017-01-08 16:32:13,910 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:32:13,911 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:32:13,912 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:32:13,916 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:32:13,916 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:32:31,528 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:32:31,529 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:32:31,530 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:32:31,532 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:32:31,532 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:32:38,068 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:32:38,069 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:32:38,070 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:32:38,071 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:32:38,072 [Worker-119] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:33:03,904 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:33:03,904 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:33:03,906 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:33:03,908 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:33:03,908 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:33:17,599 [Worker-122] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol
+2017-01-08 16:33:17,599 [Worker-122] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-01-08 16:33:22,641 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:33:22,641 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:33:22,642 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:33:22,645 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:33:22,646 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:38:21,663 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:38:21,664 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:38:21,665 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:38:21,667 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:38:21,668 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 16:38:33,845 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:38:33,846 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:38:33,847 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:38:33,849 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:38:33,849 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatClient\src\test\resources
+2017-01-08 16:38:41,873 [Worker-132] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol
+2017-01-08 16:38:41,873 [Worker-132] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-01-08 16:38:46,720 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:38:46,722 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\main\resources
+2017-01-08 16:38:46,723 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:38:46,724 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\protocol\src\test\resources
+2017-01-08 16:38:54,675 [Worker-111] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:38:54,675 [Worker-111] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B install
+2017-01-08 16:39:06,601 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:39:06,602 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-01-08 16:39:06,604 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-08 16:39:06,606 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-08 16:39:06,607 [Worker-122] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer\src\test\resources
+2017-01-08 16:39:11,598 [Worker-130] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Krzysiek\Documents\workspace-sts-3.8.3.RELEASE\ChatServer
+2017-01-08 16:39:11,598 [Worker-130] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B spring-boot:run

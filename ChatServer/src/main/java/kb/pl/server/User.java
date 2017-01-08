@@ -25,18 +25,18 @@ public class User {
 		return this.userId;
 	}
 
-	public void newMessage(Message message) {
-		// TODO Auto-generated method stub
-		System.out.println("Server User newMessage " +
-			message.getSenderId() + " " + message.getSenderName() + " " + message.getMessage());
-        messages.add(message);
-	}
-
-	public List readMessages() {
-		// TODO Auto-generated method stub
-		System.out.println("User readMessages " + messages);
-		return messages;
-	}
+//	public void newMessage(Message message) {
+//		// TODO Auto-generated method stub
+//		System.out.println("Server User newMessage " +
+//			message.getSenderId() + " " + message.getSenderName() + " " + message.getMessage());
+//        messages.add(message);
+//	}
+//
+//	public List readMessages() {
+//		// TODO Auto-generated method stub
+//		System.out.println("User readMessages " + messages);
+//		return messages;
+//	}
 	
 	
 }

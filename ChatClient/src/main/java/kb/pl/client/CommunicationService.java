@@ -20,8 +20,10 @@ public class CommunicationService {
 	 private final HessianClient hessianClient;
 //	    private final XmlRpc xmlRpc;
 	 IChatService burlapService;
+	 IChatService hessianService;
 	 private final ApplicationEventPublisher publisher;
 	 List<Message> messageList = new ArrayList<>();
+	 IChatService chatService;
 	    
 	@Autowired
 	public CommunicationService(BurlapClient burlapClient, HessianClient hessianClient, ApplicationEventPublisher publisher) throws MalformedURLException {
@@ -33,6 +35,8 @@ public class CommunicationService {
 		getHessianService();
 		getBurlapService();
 		//        xmlRpc();
+		
+		chatService = hessianService;
 	}
 	
 	private void getBurlapService() {
@@ -44,7 +48,7 @@ public class CommunicationService {
 
 	private void getHessianService() {
 		// TODO Auto-generated method stub
-		IChatService hessianService = hessianClient.getService();
+		hessianService = hessianClient.getService();
 	}
 
 	public void sendMessage(int userId, String username, String messageText) {
@@ -53,7 +57,7 @@ public class CommunicationService {
 //        Message message = new Message(username, messageText);
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		
-        burlapService.sendMessage(userId, username, messageText, timestamp.getTime());
+        chatService.sendMessage(userId, username, messageText, timestamp.getTime());
 //        CHAT_SERVICES.get(getSelectedTechnology()).sendMessage(channelData.getId(), getLoggedUser().getId(), message);
 //        LOGGER.info("Message send on channel <{}>", channelData.getName());
     }
@@ -62,7 +66,7 @@ public class CommunicationService {
 	public List<Message> readMessages() {
 		 System.out.println("@@@ CommunicationService readMessage ");
 
-		 messageList = burlapService.readMessages();
+		 messageList = chatService.readMessages();
 		 System.out.println("@@@ CommunicationService readMessage " + messageList.size() + "!");
 		 MessageEvent MessageEvent = new MessageEvent(this, messageList);
 			publisher.publishEvent(MessageEvent);
@@ -77,6 +81,24 @@ public class CommunicationService {
 	
 	public int login (String username) {
 		System.out.println("@@@@@@@@ login " + username );
-		return burlapService.login(username);
+		return chatService.login(username);
+	}
+
+	public void setTechnology(String protocol) {
+		// TODO Auto-generated method stub
+		if (protocol.equals("hessian")) {
+			chatService = hessianService;
+		} else if (protocol.equals("xmlrpc")) {
+//			chatService = xmlRpcService;
+			// temporary fix
+			chatService = burlapService;
+		} else {
+			chatService = burlapService;
+		}
+	}
+
+	public void logout(int userId) {
+		// TODO Auto-generated method stub
+		chatService.logout(userId);
 	}
 }
