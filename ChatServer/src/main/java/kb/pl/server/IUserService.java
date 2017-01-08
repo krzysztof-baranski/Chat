@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IUserService {
 
-	void login(String username);
+	int login(String username);
 
 	List<User> getUsers();
 

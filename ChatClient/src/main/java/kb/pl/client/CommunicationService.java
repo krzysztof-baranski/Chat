@@ -1,6 +1,7 @@
 package kb.pl.client;
 
 import java.net.MalformedURLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,11 +47,13 @@ public class CommunicationService {
 		IChatService hessianService = hessianClient.getService();
 	}
 
-	public void sendMessage(String username, String messageText) {
+	public void sendMessage(int userId, String username, String messageText) {
 		System.out.println("@@@@CommunicationService sendMessage " + messageText);
-		messageText += "messageText :)";
+//		messageText += "messageText :)";
 //        Message message = new Message(username, messageText);
-        burlapService.sendMessage(username, messageText + " HELLLOOOO.......... ");
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		
+        burlapService.sendMessage(userId, username, messageText, timestamp.getTime());
 //        CHAT_SERVICES.get(getSelectedTechnology()).sendMessage(channelData.getId(), getLoggedUser().getId(), message);
 //        LOGGER.info("Message send on channel <{}>", channelData.getName());
     }
@@ -72,8 +75,8 @@ public class CommunicationService {
 		MessageStorage.clearList();
 	}
 	
-	public void login (String username) {
+	public int login (String username) {
 		System.out.println("@@@@@@@@ login " + username );
-		burlapService.login(username);
+		return burlapService.login(username);
 	}
 }

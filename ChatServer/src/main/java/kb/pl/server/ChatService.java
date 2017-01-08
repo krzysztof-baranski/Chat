@@ -23,14 +23,14 @@ public class ChatService implements IChatService {
     }
 
 	@Override
-	public void sendMessage(String sender, String message) {
+	public void sendMessage(int senderId, String senderName, String message, long timestamp) {
 		// TODO Auto-generated method stub
 		System.out.println("@@@@@ ChatService sendMessage " + message);
 		
 		users = this.userService.getUsers();
 	
 		System.out.println("@@@ ChatService users " + users);
-		Message mess = new Message(sender, message);
+		Message mess = new Message(senderId, senderName, message, timestamp);
 		
 		MessageStorage.addMessage(mess);
 		for (User user: users) {
@@ -48,8 +48,8 @@ public class ChatService implements IChatService {
  }
 
 	@Override
-	public void login(String username) {
+	public int login(String username) {
 		// TODO Auto-generated method stub
-		userService.login(username);
+		return userService.login(username);
 	}
 }

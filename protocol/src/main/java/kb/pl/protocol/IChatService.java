@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface IChatService {
 
-	void sendMessage(String username, String message);
+	void sendMessage(int userId, String username, String message, long timestamp);
 
-	void login(String string);
+	int login(String string);
 
 	List<Message> readMessages();
 

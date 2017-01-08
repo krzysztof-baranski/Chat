@@ -1,0 +1,33 @@
+package kb.pl.protocol;
+
+import java.io.Serializable;
+
+/**
+ * Hello world!
+ *
+ */
+public class Message implements Serializable {
+	private String message;
+	private String senderName;
+	private int senderId;
+	private long timestamp;
+	
+    public Message(int senderId, String senderName, String messageText, long timestamp) {
+    	this.senderId = senderId;
+    	this.senderName = senderName;
+		this.message = messageText;
+		this.timestamp = timestamp;
+	}
+
+	public String getMessage () {
+    	return message;
+    }
+    
+    public String getSenderName () {
+    	return senderName;
+    }
+    
+    public int getSenderId () {
+    	return this.senderId;
+    }
+}

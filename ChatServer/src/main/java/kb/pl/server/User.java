@@ -8,23 +8,28 @@ import kb.pl.protocol.MessageStorage;
 
 public class User {
 	private final String username;
+	private final int userId;
 	private final List<Message> messages = new ArrayList<>();
 	
-	public User (String username) {
-		System.out.println("@@@ Server User constructor " + username);
+	public User (int userId, String username) {
+		System.out.println("@@@ Server User constructor " + userId + " " + username);
+		this.userId = userId;
 		this.username = username;
 	}
 	
 	public String getUsername () {
 		return this.username;
 	}
+	
+	public int getUserId () {
+		return this.userId;
+	}
 
 	public void newMessage(Message message) {
 		// TODO Auto-generated method stub
-//		List<Message> messages = new ArrayList<>();
-		System.out.println("Server User newMessage " + message.getSender() + " " + message.getMessage());
+		System.out.println("Server User newMessage " +
+			message.getSenderId() + " " + message.getSenderName() + " " + message.getMessage());
         messages.add(message);
-        MessageStorage.addMessage(message);
 	}
 
 	public List readMessages() {

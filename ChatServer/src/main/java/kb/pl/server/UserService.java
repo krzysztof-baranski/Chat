@@ -12,16 +12,19 @@ import kb.pl.server.IUserService;;
 public class UserService implements IUserService {
 	public ArrayList<User> users = new ArrayList<>();
 	public final ArrayList<Message> messages = new ArrayList<>();
+	private static int lastUserId = -1; 
 	
-	public void login(String userName) {
+	public int login(String userName) {
 		System.out.println("@@ UserService login " + userName );
-		User user = new User(userName);
+//		lastUserId++;
+		User user = new User(lastUserId + 1, userName);
 		users.add(user);
+		return lastUserId + 1;
 	}
 	
-	public void newMessage (String username, String message) {
+	public void newMessage (int userId, String username, String message, long timestamp) {
 		System.out.println("@@@ UserService newMessage " + username + " "+ message);
-		messages.add(new Message(username, message));
+//		messages.add(new Message(userId, username, message, timestamp));
 		for (int i = 0; i< users.size(); i++) {
 //			users.get(i).newMessage(username, message);
 		}

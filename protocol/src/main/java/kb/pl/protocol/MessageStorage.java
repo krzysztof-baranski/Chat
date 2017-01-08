@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MessageStorage {
 
-	private static List <Message> messages = new ArrayList();
+	private static List <Message> messages = new ArrayList<Message>();
 	public MessageStorage() {
 		
 	}

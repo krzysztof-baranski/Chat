@@ -30,6 +30,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import kb.pl.protocol.Message;
+import kb.pl.protocol.MessageStorage;
 
 @Component
 public class MainWindow extends JFrame implements ApplicationListener {
@@ -49,6 +50,8 @@ public class MainWindow extends JFrame implements ApplicationListener {
 	private final CommunicationService communicationService;
 	
 	private static int counter;
+	private static int userId;
+	long timestamp;
 	
     @Autowired
 	public MainWindow(ApplicationEventPublisher publisher, CommunicationService communicationService /*LoginPanel loginPanel, AppPanel appPanel*/) {
@@ -58,7 +61,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
 	    counter++;
 	    this.publisher = publisher;
 	    this.communicationService = communicationService;
-	    communicationService.login(userName);
+	    userId = communicationService.login(userName);
 	}
 
 	private void initialize() {
@@ -104,8 +107,8 @@ public class MainWindow extends JFrame implements ApplicationListener {
 				System.out.println("Send button pressed");
 //				MessageEvent MessageEvent = new MessageEvent(this, writeMessageField.getText());
 //				publisher.publishEvent(MessageEvent);
-				communicationService.sendMessage(userName, writeMessageField.getText());
-				communicationService.readMessages();
+				communicationService.sendMessage(userId, userName, writeMessageField.getText());
+				//communicationService.readMessages();
 			}
 		});
     	
@@ -132,6 +135,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
 				// TODO Auto-generated method stub
 				receivedMessages.setText(receivedMessages.getText() +
 						"\nWybrana technologia: Burlap");
+				
 			}
 		});
     	JRadioButton xmlRpcRadioButton = new JRadioButton("XML RPC");
@@ -141,6 +145,8 @@ public class MainWindow extends JFrame implements ApplicationListener {
 				// TODO Auto-generated method stub
 				receivedMessages.setText(receivedMessages.getText() +
 						"\nWybrana technologia: XML RPC");
+				// ############ usunąć
+				MessageStorage.clearList();
 			}
 		});
     	hessianRadioButton.setSelected(true);
@@ -190,17 +196,50 @@ public class MainWindow extends JFrame implements ApplicationListener {
 
 	private void onMessageReceived(ApplicationEvent event) {
 		// TODO Auto-generated method stub
-		System.out.println("@@@ MainWindow onMEssageReceived " + event);
+		System.out.println("@@@ MainWindow onMEssageReceived " + timestamp);
 		List<Message> list = new ArrayList<>();
 		list = ((MessageEvent) event).getMessages();
 		System.out.println(list);
-		for (Message message : list) {
-			if (message.getSender() != userName) {
-			receivedMessages.setText(receivedMessages.getText() + message.getSender() + 
+//		for (Message message : list) {
+//		Message message = list.get(list.size() - 1);
+		
+		int index = findIndexOfMessage(list, timestamp);
+		if (index < 0) {
+			return;
+		}
+		Message message;
+		
+		for (int i = index; i<list.size(); i++) {
+			message = list.get(i);
+			if (!message.getSenderName().equals(userName)) {
+				receivedMessages.setText(receivedMessages.getText() + message.getSenderName() + 
 					": " + message.getMessage() + "\n");
+				System.out.println("@@@ MainWindow " + message.getTimestamp() + " " +
+					message.getSenderId() +  " " + message.getSenderName() + 
+					": " + message.getMessage() + "\n" );
+				System.out.println("@@ " + userId + " " + userName);
+			} else {
+				// weż wiadomość i wyrównaj do prawej!!
 			}
 		}
+		timestamp = list.get(list.size() -1).getTimestamp();
+//		}
 //		receivedMessages.setText(receivedMessages.getText());
+	}
+
+	private int findIndexOfMessage(List<Message> list, long timestamp) {
+		// TODO Auto-generated method stub
+		long lastMessageTimestamp = timestamp;
+		Message m;
+		
+		for (int i = 0; i<list.size();i++) {
+			m = list.get(i);
+			long ts = m.getTimestamp();
+			if (ts > lastMessageTimestamp) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 }
