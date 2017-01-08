@@ -1,5 +1,6 @@
 package kb.pl.server;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class User {
 	private final int userId;
 	private final List<Message> messages = new ArrayList<>();
 	
-	public User (int userId, String username) {
+	public User (int userId, String username, Timestamp userTimestamp) {
 		System.out.println("@@@ Server User constructor " + userId + " " + username);
 		this.userId = userId;
 		this.username = username;

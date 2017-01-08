@@ -1,0 +1,9 @@
+package kb.pl.server;
+
+public class XmlRpc {
+
+	public XmlRpc() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

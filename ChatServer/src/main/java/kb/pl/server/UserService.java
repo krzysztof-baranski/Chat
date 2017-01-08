@@ -1,5 +1,6 @@
 package kb.pl.server;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +15,32 @@ public class UserService implements IUserService {
 	public final ArrayList<Message> messages = new ArrayList<>();
 	private int lastUserId = -1; 
 	
-	public int login(String userName) {
+	public int login(String userName, Timestamp userTimestamp) {
+		boolean isUserNameExist = false;
 		System.out.println("@@ UserService login " + userName );
+		// check if username is already taken
+		// if so - return with index = -1
+		isUserNameExist = checkIsUserExist(userName);
+		if (isUserNameExist) {
+			return -1;
+		}
 		lastUserId++;
-		User user = new User(lastUserId, userName);
+		User user = new User(lastUserId, userName, userTimestamp);
 		users.add(user);
+		System.out.println("@@@ UserService login " + users.size());
 		return lastUserId;
 	}
 	
+	private boolean checkIsUserExist(String userName) {
+		// TODO Auto-generated method stub
+		for (User user : users) {
+			if (user.getUsername().equals(userName)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 //	public void newMessage (int userId, String username, String message, long timestamp) {
 //		System.out.println("@@@ UserService newMessage " + username + " "+ message);
 //		messages.add(new Message(userId, username, message, timestamp));

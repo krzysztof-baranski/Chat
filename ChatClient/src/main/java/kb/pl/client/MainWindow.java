@@ -8,9 +8,14 @@ import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,8 +25,11 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.text.DefaultCaret;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEvent;
@@ -42,6 +50,10 @@ public class MainWindow extends JFrame implements ApplicationListener {
 	private ButtonGroup technologies;
 	private JPanel radios;
 	private JPanel message;
+	private JScrollPane scrollPane;
+	private DefaultCaret caret;
+	boolean firstClick = true;
+	
 	private final ApplicationEventPublisher publisher;
 	private static String userName;
 	
@@ -50,30 +62,32 @@ public class MainWindow extends JFrame implements ApplicationListener {
 	
 	private static int userId;
 	long timestamp;
-	
-    @Autowired
+	@Autowired
 	public MainWindow(ApplicationEventPublisher publisher, CommunicationService communicationService /*LoginPanel loginPanel, AppPanel appPanel*/) {
-//	    this.loginPanel = loginPanel;
-//	    this.appPanel = appPanel;
-	    initialize();
+		
+		userName = JOptionPane.showInputDialog("Podaj imię");
+    	if (userName.equals("")) {
+    		userName = "anon";
+    	}
+    	
 	    this.publisher = publisher;
 	    this.communicationService = communicationService;
-	    userId = communicationService.login(userName);
+	    
+	    userId = communicationService.login(userName, new Timestamp(System.currentTimeMillis()));
+	    if (userId == -1) {
+	    	JOptionPane.showMessageDialog(null, "User exist!", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+	    	new MainWindow(publisher, communicationService);
+	    	//return;
+	    }
+
+	    initialize();
 	}
 
 	private void initialize() {
 		// TODO Auto-generated method stub
 		System.out.println("@@@ Main Windows initialize ");
-		userName = JOptionPane.showInputDialog("Podaj imię");
-    	if (userName.equals("")) {
-    		userName = "anon";
-    	}
 
-//    	User user = new User(userName);
-//    	user.login(userName);
-    	
-    	//frame = new JFrame("Chat " + userName);
-    	/*frame.*/
     	setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     	WindowListener exitListener = new WindowAdapter() {
 
@@ -109,11 +123,65 @@ public class MainWindow extends JFrame implements ApplicationListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("Send button pressed");
-//				MessageEvent MessageEvent = new MessageEvent(this, writeMessageField.getText());
-//				publisher.publishEvent(MessageEvent);
-				communicationService.sendMessage(userId, userName, writeMessageField.getText());
-				//communicationService.readMessages();
+				sendMessage();
+			}
+		});
+    	
+    	writeMessageField.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				if (firstClick) {
+					firstClick = false;
+					writeMessageField.setText("");
+				}
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+    	writeMessageField.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					sendMessage();
+				}
 			}
 		});
     	
@@ -124,13 +192,19 @@ public class MainWindow extends JFrame implements ApplicationListener {
     	receivedMessages.setEditable(false);
     	receivedMessages.setSize(350, 200);
     	
+    	scrollPane = new JScrollPane(receivedMessages);
+    	scrollPane.setBounds(10,60,500,300);
+    	scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+    	caret = (DefaultCaret)receivedMessages.getCaret();
+    	caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+    	
     	JRadioButton hessianRadioButton = new JRadioButton("Hessian");
     	hessianRadioButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				receivedMessages.setText(receivedMessages.getText() +
-						"\nWybrana technologia: Hessian");
+						"\nWybrana technologia: Hessian\n");
 				
 				communicationService.setTechnology("hessian");
 			}
@@ -141,7 +215,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				receivedMessages.setText(receivedMessages.getText() +
-						"\nWybrana technologia: Burlap");
+						"\nWybrana technologia: Burlap\n");
 				
 				communicationService.setTechnology("burlap");
 			}
@@ -175,7 +249,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
     	add(radios, BorderLayout.NORTH);
 
     	/*frame.*/
-    	add(receivedMessages, BorderLayout.CENTER);
+    	add(scrollPane, BorderLayout.CENTER);
     	
     	message = new JPanel(); 
     	message.setLayout(new FlowLayout());
@@ -188,47 +262,53 @@ public class MainWindow extends JFrame implements ApplicationListener {
  
         System.out.println( "Hello World!" );
 	}
-
+	
+	private void sendMessage() {
+		// TODO Auto-generated method stub
+		System.out.println("Send button pressed");
+		communicationService.sendMessage(userId, userName, writeMessageField.getText());
+		
+		writeMessageField.setText("");
+	}
+	
 	@Override
 	public void onApplicationEvent(ApplicationEvent event) {
-//		System.out.println("@@@MainWindow " + event);
-//		communicationService.login(userName);
-		
 		if (event.getClass().equals(MessageEvent.class)) {
 			System.out.println("### MainWindow " + event.getClass() + " " + event.getSource());
 			onMessageReceived(event);	
 		}
-		
-//		if (event.getClass().equals(Mess))
 	}
 
 	private void onMessageReceived(ApplicationEvent event) {
 		// TODO Auto-generated method stub
-		System.out.println("@@@ MainWindow onMEssageReceived " + timestamp);
+		Message message;
+		int index;
 		List<Message> list = new ArrayList<>();
+		int i;
+		
+		System.out.println("@@@ MainWindow onMEssageReceived " + timestamp);
+		
 		list = ((MessageEvent) event).getMessages();
 		System.out.println(list);
-//		for (Message message : list) {
-//		Message message = list.get(list.size() - 1);
 		
-		int index = findIndexOfMessage(list, timestamp);
+		index = findIndexOfMessage(list, timestamp);
 		if (index < 0) {
 			return;
 		}
-		Message message;
 		
-		for (int i = index; i<list.size(); i++) {
+		
+		for (i = index; i<list.size(); i++) {
 			message = list.get(i);
-			if (!message.getSenderName().equals(userName)) {
+//			if (!message.getSenderName().equals(userName)) {
 				receivedMessages.setText(receivedMessages.getText() + message.getSenderName() + 
 					": " + message.getMessage() + "\n");
 				System.out.println("@@@ MainWindow " + message.getTimestamp() + " " +
 					message.getSenderId() +  " " + message.getSenderName() + 
 					": " + message.getMessage() + "\n" );
 				System.out.println("@@ " + userId + " " + userName);
-			} else {
+//			} else {
 				// weż wiadomość i wyrównaj do prawej!!
-			}
+//			}
 		}
 		timestamp = list.get(list.size() -1).getTimestamp();
 //		}
@@ -239,10 +319,12 @@ public class MainWindow extends JFrame implements ApplicationListener {
 		// TODO Auto-generated method stub
 		long lastMessageTimestamp = timestamp;
 		Message m;
+		long ts;
+		int i;
 		
-		for (int i = 0; i<list.size();i++) {
+		for (i = 0; i < list.size();i++) {
 			m = list.get(i);
-			long ts = m.getTimestamp();
+			ts = m.getTimestamp();
 			if (ts > lastMessageTimestamp) {
 				return i;
 			}
