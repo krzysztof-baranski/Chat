@@ -10,14 +10,12 @@ import kb.pl.protocol.MessageStorage;
 public class User {
 	private final String username;
 	private final int userId;
-	private final Timestamp userTimestamp;
 	private final List<Message> messages = new ArrayList<>();
 	
 	public User (int userId, String username, Timestamp userTimestamp) {
 		System.out.println("@@@ Server User constructor " + userId + " " + username);
 		this.userId = userId;
 		this.username = username;
-		this.userTimestamp = userTimestamp;
 	}
 	
 	public String getUsername () {
@@ -28,8 +26,18 @@ public class User {
 		return this.userId;
 	}
 
-	public Timestamp getUserTimestamp () {
-		return this.userTimestamp;
-	}
+//	public void newMessage(Message message) {
+//		// TODO Auto-generated method stub
+//		System.out.println("Server User newMessage " +
+//			message.getSenderId() + " " + message.getSenderName() + " " + message.getMessage());
+//        messages.add(message);
+//	}
+//
+//	public List readMessages() {
+//		// TODO Auto-generated method stub
+//		System.out.println("User readMessages " + messages);
+//		return messages;
+//	}
+	
 	
 }

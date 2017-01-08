@@ -36,8 +36,11 @@ public class ChatService implements IChatService {
 	}
 	
 	 public List<Message> readMessages() {
-//		 if ()
-		 System.out.println("@@@ ChatService readMessages ");	 
+		 System.out.println("@@@ ChatService readMessages ");
+		 if (MessageStorage.getMessages().size() > 0) {
+			 System.out.println(MessageStorage.getMessages().size() +" " + MessageStorage.getMessages().get(0).getMessage());
+		 }
+	 
 		 return MessageStorage.getMessages();
 	 }
 

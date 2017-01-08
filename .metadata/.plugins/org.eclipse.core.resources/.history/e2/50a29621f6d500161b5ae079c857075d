@@ -36,7 +36,7 @@ public class ChatService implements IChatService {
 	}
 	
 	 public List<Message> readMessages() {
-//		 if ()
+		 
 		 System.out.println("@@@ ChatService readMessages ");	 
 		 return MessageStorage.getMessages();
 	 }

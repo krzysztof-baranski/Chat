@@ -67,9 +67,9 @@ public class CommunicationService {
 	
 	@Scheduled(fixedRate = 1000)
 	public List<Message> readMessages() {
-		 
+		
 		 messageList = chatService.readMessages();
-//		 System.out.println("@@@ CommunicationService readMessage " + messageList.size() + "!");
+		 System.out.println("@@@ CommunicationService readMessage " + messageList.size() + "!");
 		 MessageEvent MessageEvent = new MessageEvent(this, messageList);
 			publisher.publishEvent(MessageEvent);
 		 return messageList;

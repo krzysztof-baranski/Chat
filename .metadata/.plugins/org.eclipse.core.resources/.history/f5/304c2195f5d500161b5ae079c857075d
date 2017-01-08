@@ -14,7 +14,6 @@ import kb.pl.protocol.MessageStorage;
 @Service
 public class ChatService implements IChatService {
 	private IUserService userService;
-	private List<User> users = new ArrayList<>();
 	
 	@Autowired
     public ChatService(IUserService userService) {
@@ -36,7 +35,7 @@ public class ChatService implements IChatService {
 	}
 	
 	 public List<Message> readMessages() {
-//		 if ()
+		 for (User u: users)
 		 System.out.println("@@@ ChatService readMessages ");	 
 		 return MessageStorage.getMessages();
 	 }

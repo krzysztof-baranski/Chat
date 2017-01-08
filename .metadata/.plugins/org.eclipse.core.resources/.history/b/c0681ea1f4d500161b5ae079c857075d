@@ -56,13 +56,12 @@ public class MainWindow extends JFrame implements ApplicationListener {
 	
 	private final ApplicationEventPublisher publisher;
 	private static String userName;
-	private User user;
 	
 	@Autowired
 	private final CommunicationService communicationService;
 	
 	private static int userId;
-	long timestamp;
+	long timestamp = new Timestamp(System.currentTimeMillis());
 	@Autowired
 	public MainWindow(ApplicationEventPublisher publisher, CommunicationService communicationService /*LoginPanel loginPanel, AppPanel appPanel*/) {
 		
@@ -83,7 +82,6 @@ public class MainWindow extends JFrame implements ApplicationListener {
 	    }
 
 	    initialize();
-	    user = new User (userId, userName, new Timestamp(System.currentTimeMillis()));
 	}
 
 	private void initialize() {
@@ -293,10 +291,9 @@ public class MainWindow extends JFrame implements ApplicationListener {
 		
 		for (i = index; i<list.size(); i++) {
 			message = list.get(i);
-			if (user.getTimestamp().getTime() < message.getMessageTimestamp()) {
-				receivedMessages.setText(receivedMessages.getText() + message.getSenderName() + 
-						": " + message.getMessage() + "\n");
-			}
+			
+			receivedMessages.setText(receivedMessages.getText() + message.getSenderName() + 
+				": " + message.getMessage() + "\n");
 		}
 		timestamp = list.get(list.size() -1).getMessageTimestamp();
 	}

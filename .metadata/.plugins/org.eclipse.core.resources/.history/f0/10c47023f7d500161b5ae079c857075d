@@ -297,7 +297,6 @@ public class MainWindow extends JFrame implements ApplicationListener {
 				receivedMessages.setText(receivedMessages.getText() + message.getSenderName() + 
 						": " + message.getMessage() + "\n");
 			}
-		}
 		timestamp = list.get(list.size() -1).getMessageTimestamp();
 	}
 

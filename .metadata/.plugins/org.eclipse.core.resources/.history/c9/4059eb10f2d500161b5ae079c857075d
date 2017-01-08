@@ -44,6 +44,8 @@ public class CommunicationService {
 	private void getBurlapService() {
 		// TODO Auto-generated method stub
 		burlapService = burlapClient.getService();
+		System.out.println("@@@@@ getBurlapService " + burlapService);
+		
 	}
 
 	private void getHessianService() {
@@ -67,9 +69,10 @@ public class CommunicationService {
 	
 	@Scheduled(fixedRate = 1000)
 	public List<Message> readMessages() {
-		 
+		 System.out.println("@@@ CommunicationService readMessage ");
+
 		 messageList = chatService.readMessages();
-//		 System.out.println("@@@ CommunicationService readMessage " + messageList.size() + "!");
+		 System.out.println("@@@ CommunicationService readMessage " + messageList.size() + "!");
 		 MessageEvent MessageEvent = new MessageEvent(this, messageList);
 			publisher.publishEvent(MessageEvent);
 		 return messageList;

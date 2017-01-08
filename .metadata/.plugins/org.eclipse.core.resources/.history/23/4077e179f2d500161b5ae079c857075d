@@ -32,7 +32,7 @@ public class Message implements Serializable {
     	return this.senderId;
     }
     
-    public long getMessageTimestamp () {
+    public long getTimestamp () {
     	return this.timestamp;
     }
 }

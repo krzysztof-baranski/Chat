@@ -1,0 +1,23 @@
+package kb.pl.client;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class User {
+	
+	private final String userName;
+	private final int userId;
+	
+	public User (int id, String userName) {
+		this.userId = id;
+		this.userName = userName;
+	}
+	
+	public String getUserName () {
+		return this.userName;
+	}
+	
+	public int getUserId () {
+		return this.userId;
+	}
+	
+}

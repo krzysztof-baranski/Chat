@@ -14,7 +14,6 @@ public class UserService implements IUserService {
 	public ArrayList<User> users = new ArrayList<>();
 	public final ArrayList<Message> messages = new ArrayList<>();
 	private int lastUserId = -1; 
-	private User user;
 	
 	public int login(String userName, Timestamp userTimestamp) {
 		boolean isUserNameExist = false;
@@ -26,7 +25,7 @@ public class UserService implements IUserService {
 			return -1;
 		}
 		lastUserId++;
-		user = new User(lastUserId, userName, userTimestamp);
+		User user = new User(lastUserId, userName, userTimestamp);
 		users.add(user);
 		System.out.println("@@@ UserService login " + users.size());
 		return lastUserId;
@@ -41,6 +40,23 @@ public class UserService implements IUserService {
 		}
 		return false;
 	}
+
+//	public void newMessage (int userId, String username, String message, long timestamp) {
+//		System.out.println("@@@ UserService newMessage " + username + " "+ message);
+//		messages.add(new Message(userId, username, message, timestamp));
+//		for (int i = 0; i< users.size(); i++) {
+//			users.get(i).newMessage(username, message);
+//		}
+//	}
+	
+//	public List<Message> readMessage () {
+//		List<Message> messages = new ArrayList<>();
+//		for (int i = 0; i< users.size(); i++) {
+//			messages.add(users.get(i).readMessages());
+//		}
+//		System.out.println("UserService readMessages " + messages);
+//		return messages;
+//	}
 
 	public List<User> getUsers() {
 		// TODO Auto-generated method stub
