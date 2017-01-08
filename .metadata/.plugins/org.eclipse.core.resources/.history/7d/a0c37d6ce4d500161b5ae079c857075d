@@ -1,0 +1,24 @@
+package kb.pl.client;
+
+import java.net.MalformedURLException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import kb.pl.protocol.IChatService;
+
+@Component
+public class XmlRpcClient {
+
+    private final ClientFactory factory;
+
+    @Autowired
+    public XmlRpcClient(ClientFactory factory) {
+        this.factory = factory;
+    }
+
+    public IChatService getService() throws MalformedURLException {
+        return (IChatService) factory.newInstance(IChatService.class);
+    }
+
+}

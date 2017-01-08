@@ -1,0 +1,9 @@
+package kb.pl.server;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class XmlRpc {
+	    
+    
+}

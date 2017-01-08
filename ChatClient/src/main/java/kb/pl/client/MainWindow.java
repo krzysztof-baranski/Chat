@@ -109,14 +109,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
     	writeMessageField = new JTextField();
     	writeMessageField.setPreferredSize(new Dimension(400 - label.getWidth(), 30));
     	writeMessageField.setText("Napisz wiadomość...");
-    	writeMessageField.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				System.out.println("aaaa" + e);
-			}
-		});
-    	
+
     	send = new JButton("Wyślij");
     	send.addActionListener(new ActionListener() {
 			
@@ -162,6 +155,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
 				
 			}
 		});
+    	
     	writeMessageField.addKeyListener(new KeyListener() {
 			
 			@Override
@@ -226,7 +220,7 @@ public class MainWindow extends JFrame implements ApplicationListener {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				receivedMessages.setText(receivedMessages.getText() +
-						"\nWybrana technologia: XML RPC");
+						"\nWybrana technologia: XML-RPC");
 
 				communicationService.setTechnology("xmlrpc");
 			}

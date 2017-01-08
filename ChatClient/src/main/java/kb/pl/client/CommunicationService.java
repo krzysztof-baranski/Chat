@@ -18,23 +18,25 @@ import kb.pl.protocol.MessageStorage;
 public class CommunicationService {
 	 private final BurlapClient burlapClient;
 	 private final HessianClient hessianClient;
-//	    private final XmlRpc xmlRpc;
+	 private final XmlRpcCl xmlRpcCl;
+	 
 	 IChatService burlapService;
 	 IChatService hessianService;
+	 IChatService xmlRpcService;
 	 private final ApplicationEventPublisher publisher;
 	 List<Message> messageList = new ArrayList<>();
 	 IChatService chatService;
 	    
 	@Autowired
-	public CommunicationService(BurlapClient burlapClient, HessianClient hessianClient, ApplicationEventPublisher publisher) throws MalformedURLException {
+	public CommunicationService(BurlapClient burlapClient, HessianClient hessianClient, XmlRpcCl xmlRpcCl, ApplicationEventPublisher publisher) throws MalformedURLException {
 		this.publisher = publisher;
 		
 		this.burlapClient = burlapClient;
 		this.hessianClient = hessianClient;
-		//        this.xmlRpc = xmlRpc;
+		this.xmlRpcCl = xmlRpcCl;
 		getHessianService();
 		getBurlapService();
-		//        xmlRpc();
+		getXmlRpcService();
 		
 		chatService = hessianService;
 	}
@@ -50,6 +52,10 @@ public class CommunicationService {
 		// TODO Auto-generated method stub
 		hessianService = hessianClient.getService();
 	}
+	
+	private void getXmlRpcService() throws MalformedURLException {
+        xmlRpcService = xmlRpcCl.getService();
+    }
 
 	public void sendMessage(int userId, String username, String messageText) {
 		Timestamp timestamp;
@@ -59,8 +65,6 @@ public class CommunicationService {
 		timestamp = new Timestamp(System.currentTimeMillis());
 		
         chatService.sendMessage(userId, username, messageText, timestamp.getTime());
-//        CHAT_SERVICES.get(getSelectedTechnology()).sendMessage(channelData.getId(), getLoggedUser().getId(), message);
-//        LOGGER.info("Message send on channel <{}>", channelData.getName());
     }
 	
 	@Scheduled(fixedRate = 1000)
@@ -90,9 +94,9 @@ public class CommunicationService {
 		if (protocol.equals("hessian")) {
 			chatService = hessianService;
 		} else if (protocol.equals("xmlrpc")) {
-//			chatService = xmlRpcService;
+			chatService = xmlRpcService;
 			// temporary fix
-			chatService = burlapService;
+//			chatService = burlapService;
 		} else {
 			chatService = burlapService;
 		}

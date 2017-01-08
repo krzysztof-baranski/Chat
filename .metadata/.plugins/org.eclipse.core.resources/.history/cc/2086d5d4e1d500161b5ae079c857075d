@@ -1,0 +1,26 @@
+package kb.pl.server;
+
+import org.apache.xmlrpc.XmlRpcException;
+import org.apache.xmlrpc.server.RequestProcessorFactoryFactory;
+import org.apache.xmlrpc.server.RequestProcessorFactoryFactory.RequestProcessorFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
+
+import kb.pl.protocol.IChatService;
+
+@Service
+public class XmlRpc {
+	    
+    @Autowired
+    private IChatService chatService;
+    
+    public RequestProcessorFactory getRequestProcessorFactory(Class classa) throws XmlRpcException {
+        if (classa.equals(IChatService.class)) {
+            return new XmlRpcRequestProcessorFactory(chatService);
+        } else {
+            throw new IllegalArgumentException("Error occured" + classa.getName() + ">");
+        }
+    }
+}

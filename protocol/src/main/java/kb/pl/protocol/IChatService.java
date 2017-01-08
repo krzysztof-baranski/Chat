@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IChatService {
 
-	void sendMessage(int userId, String username, String message, long timestamp);
+	boolean sendMessage(int userId, String username, String message, long timestamp);
 
 	int login(String username, Timestamp timestamp);
 

@@ -22,7 +22,7 @@ public class ChatService implements IChatService {
     }
 
 	@Override
-	public void sendMessage(int senderId, String senderName, String message, long timestamp) {
+	public boolean sendMessage(int senderId, String senderName, String message, long timestamp) {
 		// TODO Auto-generated method stub
 		System.out.println("@@@@@ ChatService sendMessage " + message);
 		
@@ -32,6 +32,7 @@ public class ChatService implements IChatService {
 		Message mess = new Message(senderId, senderName, message, timestamp);
 		
 		MessageStorage.addMessage(mess);
+		return true;
 	}
 	
 	 public List<Message> readMessages() {

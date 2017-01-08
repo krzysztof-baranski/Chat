@@ -1,0 +1,28 @@
+package kb.pl.server;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.xmlrpc.server.RequestProcessorFactoryFactory;
+import org.apache.xmlrpc.webserver.XmlRpcServletServer;
+import org.springframework.web.HttpRequestHandler;
+
+public class XmlRpcService implements HttpRequestHandler {
+	
+	private final XmlRpcServletServer server;
+	
+	public XmlRpcService(RequestProcessorFactoryFactory requestProcessorFactoryFactory) {
+		// TODO Auto-generated constructor stub
+		
+	}
+	
+	@Override
+	public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
